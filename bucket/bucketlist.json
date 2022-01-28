@@ -3,8 +3,9 @@
     "url": "https://gist.githubusercontent.com/phanirithvij/721ad13ee857e0dbb695161812625a81/raw/c6fcb4dd6a3bb4d104cd0691e00ffc1962abea1c/bucketlist.ps1",
     "hash": "8d8426999e14bd93340ee4ad8765d598b1198bc78898e51b21e7c9883cf80d56",
     "bin": "bucketlist.ps1",
+    "license": "MIT",
     "post_install": [
-        "scoop alias add bucketlist \"powershell -File $appsdir/bucketlist/bucketlist.ps1 $args\" \"List all installed manifests from a bucket\""
+        "scoop alias add bucketlist \"powershell -File $appsdir/bucketlist/current/bucketlist.ps1 $args\" \"List all installed manifests from a bucket\""
     ],
     "uninstaller": {
         "script": [
