@@ -5,7 +5,7 @@
     "bin": "bucketlist.ps1",
     "license": "MIT",
     "post_install": [
-        "scoop alias add bucketlist \"powershell -File $appsdir/bucketlist/current/bucketlist.ps1 $args\" \"List all installed manifests from a bucket\""
+        "scoop alias add bucketlist \"powershell -File $(appsdir $global)/bucketlist/current/bucketlist.ps1 `$args\" \"List all installed manifests from a bucket\""
     ],
     "uninstaller": {
         "script": [
