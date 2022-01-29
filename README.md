@@ -2,8 +2,9 @@
 
 Generated from https://github.com/Ash258/GenericBucket
 
-Plan to add:
+Queue:
 
 - [x] [scoop-bucketlist](https://gist.github.com/phanirithvij/721ad13ee857e0dbb695161812625a81)
+- [x] [gossa](https://github.com/pldubouilh/gossa)
 - [ ] and more...
 
