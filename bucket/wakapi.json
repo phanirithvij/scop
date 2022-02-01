@@ -6,6 +6,17 @@
     "version": "2.0.1",
     "license": "GPL-3.0-only",
     "bin": "wakapi.exe",
+    "shortcuts": [
+    	[
+    		"wakapi.exe",
+    		"Wakapi Server"
+    	]
+    ],
+    "post_install": [
+    	". $env:scoop/apps/scoop/current/lib/shortcuts.ps1",
+    	"Write-Host Adding wakapi to startup folder",
+    	"Copy-Item \"$(shortcut_folder $global)\\Wakapi Server.lnk\" \"$([Environment]::GetFolderPath('Startup'))\""
+    ],
     "persist": "config.yml",
     "checkver": {
         "github": "https://github.com/muety/wakapi"
