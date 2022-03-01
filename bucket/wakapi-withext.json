@@ -1,0 +1,43 @@
+{
+    "homepage": "https://github.com/muety/wakapi#-features",
+    "url": "https://github.com/muety/wakapi/releases/download/2.2.2/wakapi_win_amd64.zip",
+    "hash": "3e7b716c83e07d25dec4fee21ccbc140a88ac1c2a4f091b7991078906d28c139",
+    "description": "A minimalist, self-hosted WakaTime-compatible backend for coding statistics",
+    "version": "2.2.2",
+    "license": "GPL-3.0-only",
+    "bin": "wakapi.exe",
+    "shortcuts": [
+        [
+            "wakapi.exe",
+            "Wakapi Server"
+        ]
+    ],
+    "post_install": [
+        ". $env:scoop/apps/scoop/current/lib/shortcuts.ps1",
+        "write-host Adding wakapi to startup folder",
+        "copy-item \"$(shortcut_folder $global)\\Wakapi Server.lnk\" \"$([Environment]::GetFolderPath('Startup'))\"",
+        "if (get-command code -ErrorAction SilentlyContinue) {",
+        "   $codePath = (get-command code).Path",
+        "   write-host \"code is installed at $codePath\"",
+        "   code --install-extension WakaTime.vscode-wakatime --force",
+        "   if ($codePath -Match \"apps\\\\vscode\") {",
+        "       $wakapiconfpath = \"$(persistdir vscode $global)\\data\\.wakatime.cfg\"",
+        "       $wakapiconfpathpersist = \"$(persistdir wakapi-withext $global)\\.wakatime.cfg\"",
+        "       if (test-path $wakapiconfpath -PathType Leaf){",
+        "          write-host \"Linking $wakapiconfpathpersist => $wakapiconfpath\"",
+        "          & \"$env:COMSPEC\" /c \"mklink /h `\"$wakapiconfpathpersist`\" `\"$wakapiconfpath`\"\" | out-null",
+        "       } else {",
+        "          write-host \"Linking $wakapiconfpath => $wakapiconfpathpersist\"",
+        "          & \"$env:COMSPEC\" /c \"mklink /h `\"$wakapiconfpath`\" `\"$wakapiconfpathpersist`\"\" | out-null",
+        "       }",
+        "   }",
+        "}"
+    ],
+    "persist": "config.yml",
+    "checkver": {
+        "github": "https://github.com/muety/wakapi"
+    },
+    "autoupdate": {
+        "url": "https://github.com/muety/wakapi/releases/download/$version/wakapi_win_amd64.zip"
+    }
+}
