@@ -15,7 +15,13 @@
     "post_install": [
         ". $env:scoop/apps/scoop/current/lib/shortcuts.ps1",
         "Write-Host Adding wakapi to startup folder",
-        "Copy-Item \"$(shortcut_folder $global)\\Wakapi Server.lnk\" \"$([Environment]::GetFolderPath('Startup'))\""
+        "Copy-Item \"$(shortcut_folder $global)\\Wakapi Server.lnk\" \"$([Environment]::GetFolderPath('Startup'))\"",
+        "$wakapiconfpath = \"$env:SCOOP\\apps\\vscode\\current\\data\\.wakatime.cfg\"",
+        "$wakapiconfpathpersist = \"$(persistdir wakapi $global)\\.wakatime.cfg\"",
+        "if (Test-Path $wakapiconfpath -PathType Leaf){",
+        "    Write-Host \"Linking $wakapiconfpathpersist => $wakapiconfpathpersist\"",
+        "   & \"$env:COMSPEC\" /c \"mklink /h `\"$wakapiconfpathpersist`\" `\"$wakapiconfpath`\"\" | out-null",
+        "}"
     ],
     "persist": "config.yml",
     "checkver": {
