@@ -1,5 +1,5 @@
 {
-    "version": "0.7.2",
+    "version": "0.8.0",
     "description": "Distributed, offline-first bug tracker embedded in git, with bridges",
     "homepage": "https://github.com/MichaelMure/git-bug",
     "license": "GPL-3.0-or-later",
@@ -7,10 +7,8 @@
 	"url": "https://raw.githubusercontent.com/MichaelMure/git-bug/master/LICENSE",
 	"hash": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
 	"pre_install": [
-		"cd \"$(appdir git-bug-master)\\0.7.2\"",
-		"git clone --depth 1 https://github.com/MichaelMure/git-bug && cd git-bug",
-		"git fetch --depth 1 origin 450d7f7ade2496d4ecb8ae6906f53134c96ca7fb",
-		"git fetch --depth 1 origin tag v0.7.2",
+		"cd \"$(appdir git-bug-master)\\0.8.0\"",
+		"git clone --depth 1 --branch v0.8.0 https://github.com/MichaelMure/git-bug && cd git-bug",
 		"make build"
 	],
 	"bin": "git-bug/git-bug.exe",
