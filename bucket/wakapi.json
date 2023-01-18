@@ -1,9 +1,9 @@
 {
     "homepage": "https://github.com/muety/wakapi#-features",
-    "url": "https://github.com/muety/wakapi/releases/download/2.3.7/wakapi_win_amd64.zip",
-    "hash": "ee98253098bcb063e62019cef8e73db0b74e992dc0669f9018952cfa97b908e7",
+    "url": "https://github.com/muety/wakapi/releases/download/2.6.0/wakapi_windows_amd64.zip",
+    "hash": "670442bf4dacde5a610bb69d7a36c9ac0553e064726937c363df88d6926bf837",
     "description": "A minimalist, self-hosted WakaTime-compatible backend for coding statistics",
-    "version": "2.3.7",
+    "version": "2.6.0",
     "license": "GPL-3.0-only",
     "bin": "wakapi.exe",
     "shortcuts": [
@@ -23,6 +23,6 @@
         "github": "https://github.com/muety/wakapi"
     },
     "autoupdate": {
-        "url": "https://github.com/muety/wakapi/releases/download/$version/wakapi_win_amd64.zip"
+        "url": "https://github.com/muety/wakapi/releases/download/$version/wakapi_windows_amd64.zip"
     }
 }
