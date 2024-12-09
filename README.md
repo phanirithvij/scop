@@ -1,5 +1,9 @@
 ## Personal scoop bucket
 
+# ARCHIVED
+Not using windows and not planning to ever.
+If linux ever gets enshittified I will reconsider my decision.
+
 Generated from https://github.com/Ash258/GenericBucket
 
 Queue:
